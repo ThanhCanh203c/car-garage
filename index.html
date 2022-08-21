@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="./Garage-13.png" type="image/x-icon">
+    <title>Car garage</title>
+    <style>
+        :root {
+            --primary-color : #FFB3B3;
+            --text-color: #fff;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        body {
+            background-color: rgb(252, 220, 220);
+        }
+
+        #wrapper {
+            background-color: #fff;
+            width: 500px;
+            max-width: 100%;
+            margin: auto;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            min-height: 90vh;
+            height: 100vh;
+            padding: 32px 12px;
+            padding-top: 10vh;
+        }
+
+        #input-wrapper {
+            display: flex;
+            width: 100%;
+        }
+
+        #input {
+            flex: 1;
+            padding: 8px;
+            font-size: 16px;
+        }
+
+        #add-btn {
+            background-color: var(--primary-color);
+            color: var(--text-color);
+            padding: 4px 12px;
+            border-radius: 2px;
+            cursor: pointer;
+            border: none;
+        }
+
+        #add-btn:hover {
+            opacity: .8;
+        }
+
+        h2 {
+            background-color: var(--primary-color);
+            width: 100%;
+            text-align: center;
+            padding: 8px;
+            color: var(--text-color);
+            margin-top: 1rem;
+            margin-bottom: .5rem;
+            border-radius: 2px;
+        }
+
+        #root {
+            width: 100%;
+            text-align: left;
+            list-style: none;
+            user-select: none;
+            height: 67vh;
+            overflow-y: scroll;
+        }
+
+        #root::-webkit-scrollbar {
+            width: 4px;
+        }
+
+        li {
+            width: 100%;
+            background-color: #f4d6d6;
+            padding: 4px 8px;
+            text-align: center;
+            margin: 8px 0;
+            display: flex;
+            justify-content: space-between;
+            transition: all .5s;
+        }
+
+        li:hover {
+            transform: translateY(-1px);
+            box-shadow: 0 1px 1px rgba(0, 0, 0, .2);
+        }
+
+        li.slide {
+            animation: slide-top ease .3s;
+        }
+
+        @keyframes slide-top {
+            0% {
+                transform: translateY(50px);
+            }
+
+            100% {
+                transform: translateY(0);
+            }
+        }
+    </style>
+</head>
+<body>
+    <div id="wrapper">
+        <div id="input-wrapper">
+            <input type="text" id="input" placeholder="Input name car">
+            <button id="add-btn">ADD</button>
+        </div>
+        <h2>YOUR CARS</h2>
+        <ul id="root"></ul>
+    </div>
+    <script src="./app.js"></script>
+</body>
+</html>
