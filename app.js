@@ -87,7 +87,10 @@ const app = (() => {
             root.onclick = handleDelete;
             input.onkeypress = handleEnter;
 
-            this.setCars(this.getLocalData());
+            const localData = this.getLocalData();
+            if (Array.isArray(localData)){
+                this.setCars(this.getLocalData());
+            }
             this.render();
         }
     }
